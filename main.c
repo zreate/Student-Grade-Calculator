@@ -40,6 +40,42 @@ float calculateGrade(float qscore, float ascore, float mexam, float fexam){
 
 }
 
+char letterGrade(int grade){
+char letter;
+
+if (grade >= 90 && grade <=100 ){
+
+letter = 'A';
+printf("\nLetter Grade: %c", letter);
+
+}
+else if (grade >= 80 && grade <=89 )
+{
+letter = 'B';
+printf("\nLetter Grade: %c", letter);
+}
+else if (grade >= 70 && grade <=99 )
+{
+letter = 'C';
+printf("\nLetter Grade: %c", letter);
+}
+else if (grade >= 63 && grade <=79 )
+{
+letter = 'D';
+printf("\nLetter Grade: %c", letter);
+}
+else if (grade < 63)
+{
+letter = 'F';
+printf("\nLetter Grade: %c", letter);
+}
+else {
+    printf("Invalid Parameters.");
+}
+
+
+}
+
 
 int main (){
 
@@ -63,6 +99,8 @@ int main (){
     grade = calculateGrade(qscore, ascore, mexam, fexam);
 
     printf("grade: %.2f%%", grade);
+
+    letterGrade(grade);
     
 return 0;
 }
